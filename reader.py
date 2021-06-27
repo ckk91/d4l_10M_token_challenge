@@ -112,6 +112,8 @@ def write_buffer_to_db(CHUNK_SIZE, pg_cur, token_buffer):
     find for this controlled environment. The csv is constructed in-memory
     to avoid disk latency. It is also created freshly on invocation to avoid
     accidentally writing garbage that was left from previous calls.
+
+    (In this case the bytes buffer content list is logically equivalent to a single column csv)
     """
     fp_new = BytesIO(b"\n".join(token_buffer) + b"\n")
 

@@ -20,6 +20,7 @@ def generate_tokens():
     ASCII_newline = 10
 
     # writing out as a binary file to not deal with encoding
+    # in this case the resulting list is logically equivalent to a single column csv
     with open("tokens.csv", "wb") as f:
         count = 1
 
