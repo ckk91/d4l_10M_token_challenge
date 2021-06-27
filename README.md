@@ -8,7 +8,7 @@ Create 10 million tokens of the form `/[a-z]{7}/`, save them as a list and pump 
 - Should be fast and efficient in terms of resource usage (time, memory, network, cpu)
 
 ## Result
-7 million tokens produced, saved, dumped and frequency-table'd in about 16.42 seconds @ 850 MiB memory use. Profiled with `mprof`. See screenshot of profiling results (the large jumps are the Python memory manager kicking in):
+7 million tokens produced, saved, dumped and frequency-table'd in about 16.42 seconds @ 850 MiB of memory use on a 2019 Vivobook S15 (running Win10 (running Ubuntu@WSL2 (running Docker))). Profiled with `mprof`. See screenshot of profiling results (the large jumps are the Python memory manager kicking in):
 
 ![Profiling results of mprof](./mprof.png?raw=true "Profiling Results")
 
