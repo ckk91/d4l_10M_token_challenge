@@ -42,7 +42,7 @@ Force of habit at this point, to be honest.
 ## Approach / Design Decisions
 Initial requirements gathering via email had shown that there should be a focus on execution speed, additionally to memory and network efficiency. Subsequent decisions were influenced by this, while weighing against clean code practices. Listed below are results of post-profiling and code optimization. The optimization itself was an iterative process, startign from a working minimum viable solution.
 
-- Time: about 16-12s
+- Time: about 16-20s
 - Memory: about 850 MiB
 - Network: Good enough to not congest
 
