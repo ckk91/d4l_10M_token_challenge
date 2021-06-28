@@ -71,13 +71,12 @@ def pump_tokens_to_db(pg_cur):
 
     frequencies = defaultdict(int)
     token_buffer = []
-    chunk_count = 1
 
     # We're working with bytestrings here, because they use less memory
     # compared to normal utf-8 strings. This little `b` shaves off around
     # 300 MiB.
     with open("tokens.csv", "rb") as f:
-        data = f.read(chunk_count * CHUNK_SIZE)
+        data = f.read(CHUNK_SIZE)
 
         while data:
             amount = data.split(b"\n")
@@ -100,7 +99,7 @@ def pump_tokens_to_db(pg_cur):
             write_buffer_to_db(CHUNK_SIZE, pg_cur, token_buffer)
             token_buffer = []
 
-            data = f.read(chunk_count * CHUNK_SIZE)
+            data = f.read(CHUNK_SIZE)
 
     return frequencies
 
