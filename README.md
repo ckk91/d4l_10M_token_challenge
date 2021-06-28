@@ -15,6 +15,8 @@ Create 10 million tokens of the form `/[a-z]{7}/`, save them as a list and pump 
 ## Post-Submission
 - Created [tokengen_but_even_faster.py](./tokengen_but_even_faster.py). Turns out that with the approach in there you can push the token generation into the sub-second range.
 
+![Profiling results of faster approach](./mprof_but_faster.png?raw=true "Post-Submission Profiling Results")
+
 ## TO DO
 - [ ] click and run docker environment
 - [ ] integration test
