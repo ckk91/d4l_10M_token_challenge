@@ -29,6 +29,8 @@ def generate_tokens():
             d = np.random.randint(ASCII_a, ASCII_z + 1, size=CHUNK_SIZE)
 
             # add in a \n every 8 chars
+            # turns out that inserts are expensive and this approach pushes
+            # the generation into the sub-second range.
             d[:d.size:8]=10
             # d = np.insert(d, range(7, len(d), 7), ASCII_newline)
             d = np.append(d, ASCII_newline)  # last newline
