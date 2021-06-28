@@ -12,7 +12,8 @@ Create 10 million tokens of the form `/[a-z]{7}/`, save them as a list and pump 
 
 ![Profiling results of mprof](./mprof.png?raw=true "Profiling Results")
 
-## Post-Submission
+## Post-Submission and further thoughts
+- Memory use could be pushed further down by creating a custom hashing function that exploits the fact that the tokens are essentially their own hashes and instead of saving the hash, one could save the index position of the string into the hash buckets. That way we don't have to keep track of the larger strings. Could be a dead end though.
 - Created [tokengen_but_even_faster.py](./tokengen_but_even_faster.py). Turns out that with the approach in there you can push the token generation into the sub-second range.
 
 ![Profiling results of faster approach](./mprof_but_faster.png?raw=true "Post-Submission Profiling Results")
